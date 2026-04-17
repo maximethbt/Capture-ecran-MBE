@@ -27,6 +27,8 @@ namespace Capture_ecran_MBE
             Rectangle rect = new Rectangle(0, 0, image.Width, image.Height);
             Graphics g = Graphics.FromImage(image);
             g.CopyFromScreen(rect.Top, rect.Left, 0, 0, rect.Size);
+            pictureBox_Screenshot.Dock = DockStyle.Fill;
+            pictureBox_Screenshot.Size = rect.Size;
             pictureBox_Screenshot.Image = image;
         }
     }
