@@ -22,19 +22,9 @@ namespace Capture_ecran_MBE
             g = Graphics.FromImage(screenshot);
             g.CopyFromScreen(bounds.X, bounds.Y, 0, 0, bounds.Size);
             return new Bitmap(screenshot);
+            g.Dispose();
         }
+        
 
-        public static byte[] CaptureJpeg(int ScreenNum)
-        {
-            bounds = Screen.AllScreens[ScreenNum - 1].Bounds;
-            screenshot = new Bitmap(bounds.Width, bounds.Height);
-            g = Graphics.FromImage(screenshot);
-            g.CopyFromScreen(bounds.X, bounds.Y, 0, 0, bounds.Size);
-            MemoryStream ms = new MemoryStream();
-            screenshot.Save(ms, ImageFormat.Jpeg);
-            byte[] data = ms.ToArray();
-            ms.Dispose();
-            return data;
-        }
     }
 }
