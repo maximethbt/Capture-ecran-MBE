@@ -35,9 +35,10 @@
             // 
             // button_Screenshot
             // 
-            this.button_Screenshot.Location = new System.Drawing.Point(345, 336);
+            this.button_Screenshot.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button_Screenshot.Location = new System.Drawing.Point(0, 0);
             this.button_Screenshot.Name = "button_Screenshot";
-            this.button_Screenshot.Size = new System.Drawing.Size(88, 23);
+            this.button_Screenshot.Size = new System.Drawing.Size(88, 450);
             this.button_Screenshot.TabIndex = 0;
             this.button_Screenshot.Text = "Screenshot";
             this.button_Screenshot.UseVisualStyleBackColor = true;
@@ -45,9 +46,11 @@
             // 
             // pictureBox_Screenshot
             // 
-            this.pictureBox_Screenshot.Location = new System.Drawing.Point(345, 191);
+            this.pictureBox_Screenshot.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox_Screenshot.Location = new System.Drawing.Point(88, 0);
             this.pictureBox_Screenshot.Name = "pictureBox_Screenshot";
-            this.pictureBox_Screenshot.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox_Screenshot.Size = new System.Drawing.Size(712, 450);
+            this.pictureBox_Screenshot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox_Screenshot.TabIndex = 1;
             this.pictureBox_Screenshot.TabStop = false;
             // 

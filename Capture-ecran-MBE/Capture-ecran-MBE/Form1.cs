@@ -11,8 +11,11 @@ namespace Capture_ecran_MBE
 {
     public partial class Form1 : Form
     {
+        [System.Runtime.InteropServices.DllImport("user32.dll")] //
+        static extern bool SetProcessDPIAware();                 // permet d'avoir toute la résolution disponible
         public Form1()
         {
+            SetProcessDPIAware();
             InitializeComponent();
         }
 
@@ -23,12 +26,12 @@ namespace Capture_ecran_MBE
 
         private void button_Screenshot_Click(object sender, EventArgs e)
         {
-            Bitmap image = new Bitmap(System.Windows.Forms.SystemInformation.VirtualScreen.Width, System.Windows.Forms.SystemInformation.VirtualScreen.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
-            Rectangle rect = new Rectangle(0, 0, image.Width, image.Height);
+            Rectangle rect = Screen.PrimaryScreen.Bounds;
+            Bitmap image = new Bitmap(rect.Width, rect.Height);
             Graphics g = Graphics.FromImage(image);
             g.CopyFromScreen(rect.Top, rect.Left, 0, 0, rect.Size);
-            pictureBox_Screenshot.Dock = DockStyle.Fill;
             pictureBox_Screenshot.Size = rect.Size;
+            pictureBox_Screenshot.Dock = DockStyle.Fill;
             pictureBox_Screenshot.Image = image;
         }
     }
