@@ -26,13 +26,7 @@ namespace Capture_ecran_MBE
 
         private void button_Screenshot_Click(object sender, EventArgs e)
         {
-            Rectangle rect = Screen.PrimaryScreen.Bounds;
-            Bitmap image = new Bitmap(rect.Width, rect.Height);
-            Graphics g = Graphics.FromImage(image);
-            g.CopyFromScreen(rect.Top, rect.Left, 0, 0, rect.Size);
-            pictureBox_Screenshot.Size = rect.Size;
-            pictureBox_Screenshot.Dock = DockStyle.Fill;
-            pictureBox_Screenshot.Image = image;
+            pictureBox_Screenshot.Image = CaptureMBE.Capture(2);
         }
     }
 }
