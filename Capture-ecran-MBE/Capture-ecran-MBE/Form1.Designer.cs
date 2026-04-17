@@ -28,13 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.button_Screenshot = new System.Windows.Forms.Button();
+            this.pictureBox_Screenshot = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Screenshot)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // button_Screenshot
+            // 
+            this.button_Screenshot.Location = new System.Drawing.Point(345, 336);
+            this.button_Screenshot.Name = "button_Screenshot";
+            this.button_Screenshot.Size = new System.Drawing.Size(88, 23);
+            this.button_Screenshot.TabIndex = 0;
+            this.button_Screenshot.Text = "Screenshot";
+            this.button_Screenshot.UseVisualStyleBackColor = true;
+            this.button_Screenshot.Click += new System.EventHandler(this.button_Screenshot_Click);
+            // 
+            // pictureBox_Screenshot
+            // 
+            this.pictureBox_Screenshot.Location = new System.Drawing.Point(345, 191);
+            this.pictureBox_Screenshot.Name = "pictureBox_Screenshot";
+            this.pictureBox_Screenshot.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox_Screenshot.TabIndex = 1;
+            this.pictureBox_Screenshot.TabStop = false;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox_Screenshot);
+            this.Controls.Add(this.button_Screenshot);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Screenshot)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button button_Screenshot;
+        private System.Windows.Forms.PictureBox pictureBox_Screenshot;
     }
 }
 
